@@ -21,6 +21,7 @@ export default class Demo extends PureComponent {
       <>
         <input type="text" name="text" value={text} onChange={this.handleChange}></input>
         <header>{text}</header>
+        <footer>footer</footer>
       </>
    );
  }
