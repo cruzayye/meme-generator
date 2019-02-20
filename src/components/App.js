@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import styles from './App.css';
-
-// import domToImage from 'dom-to-image';
+import domToImage from 'dom-to-image';
+import fileSaver from 'file-saver';
 
 export default class Demo extends PureComponent {
-  // constructor(props) {
-  //   super(props);
-  //   this.formattedTextRef = React.createRef();
-  // }
+  constructor(props) {
+    super(props);
+    this.imageRef = React.createRef();
+  }
 
   state = {
     header: '',
@@ -15,16 +15,22 @@ export default class Demo extends PureComponent {
     img: ''
   };
 
-  //  textToImage = event => {
-  //    event.preventDefault();
-  //    domToImage.toPng(this.formattedTextRef.current)
-  //      .then(img => {
-  //        this.setState({ img });
-  //      });
-  //  };
+  makeImg = event => {
+    console.log('made image');
+    event.preventDefault();
+    domToImage.toPng(this.imageRef.current)
+      .then(img => {
+        this.setState({ img });
+      });
+  };
 
  handleChange = ({ target }) => {
    this.setState({ [target.name]: target.value });
+ };
+
+ handleSubmit = (event) => {
+   event.preventDefault();
+   console.log('submit hit');
  };
 
 
@@ -32,7 +38,7 @@ export default class Demo extends PureComponent {
    const { header, footer, img } = this.state;
    return (
       <>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div>
             <input type="text" name="header" value={header}  placeholder="header" onChange={this.handleChange} />
           </div>
@@ -44,17 +50,11 @@ export default class Demo extends PureComponent {
             <input type="text" name="img" value={img}  placeholder="Img Url" onChange={this.handleChange}/>
           </div>
           
-
-     
-          
-
-  
-          
-          <input type="submit" value="Submit" onSubmit={this.handleChange} />
+          <input type="submit" value="Submit" onClick={this.makeImg}/>
 
         </form>
         <section>
-          <div>
+          <div ref={this.imageRef}>
             <header className={styles.header} >{header}</header>
             <img src={img}/>
             <footer>{footer}</footer>

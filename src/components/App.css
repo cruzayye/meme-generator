@@ -1,14 +1,15 @@
 
 //Form
-form{
-  display: grid;
-  justify-content: center;
-  row-gap: 5%;
 
-}
 
 input {
   width: 50vh;
+}
+
+form{
+  display: grid;
+  justify-content: center;
+  grid-gap: 1em;
 }
 
 //Gif
