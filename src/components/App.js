@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import styles from './App.css';
+
 // import domToImage from 'dom-to-image';
 
 export default class Demo extends PureComponent {
@@ -31,16 +33,33 @@ export default class Demo extends PureComponent {
    return (
       <>
         <form>
-          <input type="text" name="header" value={header} onChange={this.handleChange} placeholder="header" />
-          <header>{header}</header>
+          <div>
+            <input type="text" name="header" value={header}  placeholder="header" onChange={this.handleChange} />
+          </div>
 
-          <input type="text" name="footer" value={footer} onChange={this.handleChange} placeholder="Footer" />
-          <footer>{footer}</footer>
+          <div>
+            <input type="text" name="footer" value={footer}  placeholder="Footer" onChange={this.handleChange} /> 
+          </div>
+          <div>
+            <input type="text" name="img" value={img}  placeholder="Img Url" onChange={this.handleChange}/>
+          </div>
+          
 
-          <input type="text" name="img" value={img} onChange={this.handleChange} placeholder="Img Url" />
-          <img src={img}/>
-          <button>Meme Out</button>
+     
+          
+
+  
+          
+          <input type="submit" value="Submit" onSubmit={this.handleChange} />
+
         </form>
+        <section>
+          <div>
+            <header className={styles.header} >{header}</header>
+            <img src={img}/>
+            <footer>{footer}</footer>
+          </div>
+        </section>
 
       </>
    );

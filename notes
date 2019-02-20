@@ -1,5 +1,19 @@
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'Please write an essay about your favorite DOM element.'
+    };
+//what does the bind do again?
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+
+
+
 Pure component only rerenders when the propeties change
 Component- when the parent changes
+??so a pure component can only be set on the parent component?
 
 event.peventDefault would prevent page from refreshing if it was a submit. 
 
@@ -13,7 +27,7 @@ The reason we break functions up into components is so they can be used througho
 
 User.findByid: static
 user.create: instance
-/in React we used a stattic proptypes 
+/in React we used a stat  ic proptypes 
 
 pure components change when the props that get passed to it get chnages. 
 
