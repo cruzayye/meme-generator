@@ -1,0 +1,32 @@
+Pure component only rerenders when the propeties change
+Component- when the parent changes
+
+event.peventDefault would prevent page from refreshing if it was a submit. 
+
+state = anything that is changeable including by the user. 
+
+functional components are a way to differentiate from components that take states. 
+
+FormatDisplay.js is just referencing the dom. 
+
+The reason we break functions up into components is so they can be used throughout files/injected throughout files. 
+
+User.findByid: static
+user.create: instance
+/in React we used a stattic proptypes 
+
+pure components change when the props that get passed to it get chnages. 
+
+//problem
+ handleChange = ({ target }) => {
+   this.setState({ [target.name]: target.value }), () => {
+     console.log(target.value);
+   };
+ };
+
+//good
+ handleChange = ({ target }) => {
+   this.setState({ [target.name]: target.value }, () => {
+     console.log(target.value);
+   });
+ };
