@@ -13,7 +13,8 @@ export default class Demo extends PureComponent {
   state = {
     header: '',
     footer: '',
-    img: ''
+    img: '',
+    color: 'ffffff'
   };
 
   makeImg = event => {
@@ -36,7 +37,7 @@ export default class Demo extends PureComponent {
 
 
  render() {
-   const { header, footer, img } = this.state;
+   const { header, footer, img, color } = this.state;
    return (
       <>
         <form onSubmit={this.handleSubmit}>
@@ -50,6 +51,9 @@ export default class Demo extends PureComponent {
           <div>
             <input type="text" name="img" value={img}  placeholder="Img Url" onChange={this.handleChange}/>
           </div>
+          <div>
+            <input type ="color" name="color" value={color} onChange={this.handleChange}/>
+          </div>
           <input type="submit" value="Submit" onClick={this.makeImg}/>
         </form>
 
@@ -57,7 +61,7 @@ export default class Demo extends PureComponent {
           <div ref={this.imageRef}>
             <header className={styles.header} >{header}</header>
             <img src={img}/>
-            <footer>{footer}</footer>
+            <footer style={{ color }}>{footer}</footer>
           </div>
         </section>
 
