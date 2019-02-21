@@ -1,3 +1,9 @@
+  NPMS
+  webpackdashboard
+
+  ['ababel/polyfill', './src/index.js'}
+  //this lets us use await and makes our code look more synchronous instead of turning our code into a function
+  -------------------
   constructor(props) {
     super(props);
     this.state = {
@@ -9,7 +15,8 @@
   }
 
 
-
+props are components that can be passes around
+props are read only 
 
 Pure component only rerenders when the propeties change
 Component- when the parent changes
@@ -19,7 +26,16 @@ event.peventDefault would prevent page from refreshing if it was a submit.
 
 state = anything that is changeable including by the user. 
 
-functional components are a way to differentiate from components that take states. 
+functional components are a way to differentiate from components that take states.
+aka dummy components aka representational components that dont change anything.
+
+//
+
+classs componentReview extends Component{
+ //used when dealing with states which are changeable.
+ //which can be updated with this.setState, and can take a second function to make it Async
+ //encapsulated within this component so the parents or children of this componenet dont know about the states??? 
+}
 
 FormatDisplay.js is just referencing the dom. 
 
@@ -30,6 +46,10 @@ user.create: instance
 /in React we used a stat  ic proptypes 
 
 pure components change when the props that get passed to it get chnages. 
+
+
+//STYLING
+if you want to style inline use double curly braces. 
 
 //problem
  handleChange = ({ target }) => {

@@ -6,6 +6,7 @@ import fileSaver from 'file-saver';
 export default class Demo extends PureComponent {
   constructor(props) {
     super(props);
+    //creates reference to Dom node
     this.imageRef = React.createRef();
   }
 
@@ -16,11 +17,11 @@ export default class Demo extends PureComponent {
   };
 
   makeImg = event => {
-    console.log('made image');
     event.preventDefault();
     domToImage.toPng(this.imageRef.current)
       .then(img => {
-        this.setState({ img });
+        fileSaver.saveAs(img);
+        // this.setState({ img });
       });
   };
 
@@ -49,10 +50,9 @@ export default class Demo extends PureComponent {
           <div>
             <input type="text" name="img" value={img}  placeholder="Img Url" onChange={this.handleChange}/>
           </div>
-          
           <input type="submit" value="Submit" onClick={this.makeImg}/>
-
         </form>
+
         <section>
           <div ref={this.imageRef}>
             <header className={styles.header} >{header}</header>
