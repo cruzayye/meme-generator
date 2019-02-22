@@ -14,7 +14,7 @@ export default class Demo extends PureComponent {
     header: '',
     footer: '',
     img: '',
-    color: 'ffffff'
+    color: '#000000'
   };
 
   makeImg = event => {
@@ -59,7 +59,7 @@ export default class Demo extends PureComponent {
 
         <section>
           <div ref={this.imageRef}>
-            <header className={styles.header} >{header}</header>
+            <header style={{ color }} >{header}</header>
             <img src={img}/>
             <footer style={{ color }}>{footer}</footer>
           </div>
