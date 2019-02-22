@@ -23,7 +23,7 @@ export default class Demo extends PureComponent {
 
   makeImg = event => {
     event.preventDefault();
-    domToImage.toPng(this.imageRef.current)
+    domToImage.toPng(this.memeRef.current)
       .then(img => {
         fileSaver.saveAs(img);
         // this.setState({ img });
@@ -56,7 +56,6 @@ export default class Demo extends PureComponent {
           memeRef={this.memeRef}
           footerColor={footerColor}
           headerColor={headerColor}
-
           header={header}
           footer={footer}
           img={img}

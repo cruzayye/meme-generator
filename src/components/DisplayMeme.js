@@ -11,12 +11,12 @@ function DisplayMeme({ memeRef, header, headerColor, footerColor, img, footer })
   };
 
   return (
-    <section ref={memeRef}>
+    <div ref={memeRef}>
       <h2 style={headerStyle}>{header}</h2>
       <img src={img} />
       <h2 style={footerStyle}>{footer}</h2>
 
-    </section>
+    </div>
   );
 }
 
