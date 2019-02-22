@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 function Controls({ header, footer, headerColor, footerColor, img, onChange, onSubmit }) {
   return (
     <form onSubmit={onSubmit}>
-      <textControl name="header" text={header} color={headerColor} onChange={onChange} />
-      <textControl name="footer" text={footer} color={footerColor} onChange={onChange} />
+      <TextControl name="header" text={header} color={headerColor} onChange={onChange} />
+      <TextControl name="footer" text={footer} color={footerColor} onChange={onChange} />
       <input type='img' name='img' value={img} onChange={onChange} />
       <button type='submit'>Memify</button>
     </form>
@@ -25,7 +25,7 @@ Controls.propTypes = {
 
 };
 
-function textControl({ name, text, color, onChange }) {
+function TextControl({ name, text, color, onChange }) {
   return (
     <>
         <input type="text" name={name} value={text}  placeholder="header" onChange={onChange} />
@@ -36,7 +36,7 @@ function textControl({ name, text, color, onChange }) {
   );
 }
 
-textControl.propTypes = {
+TextControl.propTypes = {
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
