@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function DisplayMeme({ memeRef, header, headerColor, footerColor, img, footer }) {
+function DisplayMeme({ memeRef, font,  header, headerColor, footerColor, img, footer }) {
   const headerStyle = {
     color: headerColor,
+    fontFamily: font
+
   };
 
   const footerStyle = {
     color: footerColor,
+    fontFamily: font
+
+
   };
 
   return (
@@ -29,6 +34,7 @@ DisplayMeme.propTypes = {
   footer: PropTypes.string.isRequired,
   // footerColor: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
+  font: PropTypes.string.isRequired
 };
 
 

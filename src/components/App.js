@@ -18,7 +18,8 @@ export default class Demo extends PureComponent {
     footerColor: '#000000',
     footer: '',
     img: '',
-    color: '#000000'
+    color: '#000000',
+    font: 'baskerville'
   };
 
   makeImg = event => {
@@ -38,7 +39,7 @@ export default class Demo extends PureComponent {
 
 
  render() {
-   const { header, footer, img, color, headerColor, footerColor } = this.state;
+   const { header, footer, img, color, headerColor, footerColor, font } = this.state;
    return (
       <>
         <Controls
@@ -50,6 +51,7 @@ export default class Demo extends PureComponent {
           img={img}
           onChange={this.handleChange}
           onSubmit={this.makeImg}
+          font={font}
         />
 
         <DisplayMeme
@@ -59,6 +61,7 @@ export default class Demo extends PureComponent {
           header={header}
           footer={footer}
           img={img}
+          font={font}
         />
 
 
