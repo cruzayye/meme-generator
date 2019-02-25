@@ -1,14 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//why textControl and not input?
+
+function Fonts({ onChange }) {
+  const fontValue = ['helvetica', 'baskerville', 'arial'];
+  const fontChoice = fontValue.map(font => {
+    return (
+      <option key={font}>{font}</option>
+    );
+  });
+
+  return (
+    <select onChange={onChange}>{fontChoice}</select>
+  );
+}
+
+Fonts.propTypes = {
+  fontValue: PropTypes.string.isRequired,
+  onChange: PropTypes.string.isRequired,
+
+};
+
+
+
 function Controls({ header, footer, headerColor, footerColor, img, onChange, onSubmit, font }) {
   return (
     <form onSubmit={onSubmit}>
       <TextControl name="header" font={font} text={header} color={headerColor} onChange={onChange} />
-      <TextControl name="footer" font={font} text={footer} color={footerColor} onChange={onChange} />
+      <TextControl name="footer"  text={footer} color={footerColor} onChange={onChange} />
       <input type='img'  name='img' value={img} onChange={onChange} />
-      <button type='submit'>Memify</button>
-      <option value={font}>Font</option>
+      <Fonts />
+      <button name="fonts" type='submit' >Memify</button>
     </form>
   );
 }
@@ -27,13 +48,13 @@ Controls.propTypes = {
 
 };
 
-function TextControl({ name, text, color, onChange, font}) {
+function TextControl({ name, text, color, onChange, font }) {
   return (
     <>
         <input type="text" name={name} value={text}  placeholder={name} font={font} onChange={onChange}  />
       
         <input type ="color" name={`${name}Color`} value={color} onChange={onChange} />
-        <option></option>
+        
       
     </>
   );
