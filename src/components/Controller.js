@@ -1,34 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Fonts({ onChange }) {
-  const fontValue = ['helvetica', 'baskerville', 'arial'];
-  const fontChoice = fontValue.map(font => {
-    return (
-      <option key={font}>{font}</option>
-    );
-  });
+// function Fonts({ onChange }) {
+//   const fontValue = ['helvetica', 'baskerville', 'arial'];
+//   const fontChoice = fontValue.map(font => {
+//     return (
+//       <option key={font}>{font}</option>
+//     );
+//   });
 
-  return (
-    <select onChange={onChange}>{fontChoice}</select>
-  );
-}
+//   return (
+//     <select onChange={onChange}>{fontChoice}</select>
+//   );
+// }
 
-Fonts.propTypes = {
-  fontValue: PropTypes.string.isRequired,
-  onChange: PropTypes.string.isRequired,
+// Fonts.propTypes = {
+//   fontValue: PropTypes.string.isRequired,
+//   onChange: PropTypes.string.isRequired,
 
-};
+// };
 
 
 
 function Controls({ header, footer, headerColor, footerColor, img, onChange, onSubmit, font }) {
   return (
     <form onSubmit={onSubmit}>
-      <TextControl name="header" font={font} text={header} color={headerColor} onChange={onChange} />
+      <TextControl name="header" text={header} color={headerColor} onChange={onChange} font={font} />
       <TextControl name="footer"  text={footer} color={footerColor} onChange={onChange} />
       <input type='img'  name='img' value={img} onChange={onChange} />
-      <Fonts />
+      <input type='text' name='font' value={font} onChange={onChange} />
+    
       <button name="fonts" type='submit' >Memify</button>
     </form>
   );
@@ -53,7 +54,7 @@ function TextControl({ name, text, color, onChange, font }) {
     <>
         <input type="text" name={name} value={text}  placeholder={name} font={font} onChange={onChange}  />
       
-        <input type ="color" name={`${name}Color`} value={color} onChange={onChange} />
+        <input type ="color" name={`${name}Color`} value={color} onChange={onChange} font={font} />
         
       
     </>

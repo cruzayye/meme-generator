@@ -60,10 +60,10 @@ export default class Demo extends PureComponent {
           memeRef={this.memeRef}
           footerColor={footerColor}
           headerColor={headerColor}
+          font={font}
           header={header}
           footer={footer}
           img={img}
-          font={font}
         />
 
 
