@@ -1,24 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// function Fonts({ onChange }) {
-//   const fontValue = ['helvetica', 'baskerville', 'arial'];
-//   const fontChoice = fontValue.map(font => {
-//     return (
-//       <option key={font}>{font}</option>
-//     );
-//   });
-
-//   return (
-//     <select onChange={onChange}>{fontChoice}</select>
-//   );
-// }
-
-// Fonts.propTypes = {
-//   fontValue: PropTypes.string.isRequired,
-//   onChange: PropTypes.string.isRequired,
-
-// };
 
 
 
@@ -26,7 +8,7 @@ function Controls({ header, footer, headerColor, footerColor, img, onChange, onS
   return (
     <form onSubmit={onSubmit}>
       <TextControl name="header" text={header} color={headerColor} onChange={onChange} font={font} />
-      <TextControl name="footer"  text={footer} color={footerColor} onChange={onChange} />
+      <TextControl name="footer"  text={footer} color={footerColor} onChange={onChange} font={font}/>
       <input type='img'  name='img' value={img} onChange={onChange} />
       <input type='text' name='font' value={font} onChange={onChange} />
     
@@ -36,38 +18,35 @@ function Controls({ header, footer, headerColor, footerColor, img, onChange, onS
 }
 
 Controls.propTypes = {
-  headerColor: PropTypes.string.isRequired,
-  footerColor: PropTypes.string.isRequired,
   header: PropTypes.string.isRequired,
   footer: PropTypes.string.isRequired,
-  font: PropTypes.string.isRequired,
-  // color: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
-  //why do we need these two? i thought that form was just about html tags. 
   onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired
-
+  font: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  headerColor: PropTypes.string.isRequired,
+  footerColor: PropTypes.string.isRequired,
 };
 
-function TextControl({ name, text, color, onChange, font }) {
+
+
+function TextControl({ name, color, onChange, font }) {
   return (
-    <>
-        <input type="text" name={name} value={text}  placeholder={name} font={font} onChange={onChange}  />
-      
-        <input type ="color" name={`${name}Color`} value={color} onChange={onChange} font={font} />
+      <>
+          <input type="text" name={name} placeholder={name} font={font} onChange={onChange}  />
         
-      
-    </>
+          <input type ="color" name={`${name}Color`} value={color} onChange={onChange} font={font} />
+          
+        
+      </>
   );
 }
 
 TextControl.propTypes = {
   name: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
   font: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
 export default Controls;
-

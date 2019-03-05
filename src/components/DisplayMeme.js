@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 function DisplayMeme({ memeRef, font,  header, headerColor, footerColor, img, footer }) {
   const headerStyle = {
     color: headerColor,
-    fontFamily: font
-
+    fontFamily: font, 
   };
 
   const footerStyle = {
@@ -17,9 +16,9 @@ function DisplayMeme({ memeRef, font,  header, headerColor, footerColor, img, fo
 
   return (
     <div ref={memeRef}>
-      <h2 style={headerStyle}>{header}</h2>
+      <h2 style={headerStyle} className='header'>{header}</h2>
       <img src={img} />
-      <h2 style={footerStyle}>{footer}</h2>
+      <h2 style={footerStyle} className='footer'>{footer}</h2>
 
     </div>
   );
