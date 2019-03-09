@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-
-
 function Controls({ header, footer, headerColor, footerColor, img, onChange, onSubmit, font }) {
   return (
     <form onSubmit={onSubmit}>

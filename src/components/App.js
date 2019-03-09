@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import styles from './App.css';
+// import styles from './App.css';
 import Controls from './Controller';
 import DisplayMeme from './DisplayMeme';
 import domToImage from 'dom-to-image';
