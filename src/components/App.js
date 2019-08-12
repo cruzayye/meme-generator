@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { PureComponent } from 'react';
-// import styles from './App.css';
+import styles from './App.css';
 import Controls from './Controller';
 import DisplayMeme from './DisplayMeme';
 import domToImage from 'dom-to-image';
@@ -44,7 +45,7 @@ export default class Demo extends PureComponent {
    const { header, footer, img, color, headerColor, footerColor, font } = this.state;
    return (
       <>
-        <Controls
+        <Controls 
           header={header}
           headerColor={headerColor}
           footerColor={footerColor}

@@ -19,7 +19,6 @@ function DisplayMeme({ memeRef, font,  header, headerColor, footerColor, img, fo
       <h2 style={headerStyle} className='header'>{header}</h2>
       <img src={img} />
       <h2 style={footerStyle} className='footer'>{footer}</h2>
-
     </div>
   );
 }

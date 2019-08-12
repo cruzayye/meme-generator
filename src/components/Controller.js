@@ -6,7 +6,7 @@ function Controls({ header, footer, headerColor, footerColor, img, onChange, onS
     <form onSubmit={onSubmit}>
       <TextControl name="header" text={header} color={headerColor} onChange={onChange} font={font} />
       <TextControl name="footer"  text={footer} color={footerColor} onChange={onChange} font={font}/>
-      <input type='img'  name='img' value={img} onChange={onChange} />
+      <input type='img'  name='img' value={img} onChange={onChange} placeholder='image' />
       <input type='text' name='font' value={font} onChange={onChange} />
     
       <button name="fonts" type='submit' >Memify</button>
@@ -32,9 +32,7 @@ function TextControl({ name, color, onChange, font }) {
       <>
           <input type="text" name={name} placeholder={name} font={font} onChange={onChange}  />
         
-          <input type ="color" name={`${name}Color`} value={color} onChange={onChange} font={font} />
-          
-        
+          <input type ="color" name={`${name}Color`} value={color} onChange={onChange} font={font} />  
       </>
   );
 }
