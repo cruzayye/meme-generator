@@ -5,8 +5,14 @@
     grid-template-columns: 1fr 1fr;
     text-align: center;
 
-    .middle {
-      background-color: yellow;
+    .first {
+      border-right: 1px solid black;
     }
-    
+
+    .second {
+      align-self: center;
+      img {
+        max-width: 75%;
+      }
+    }
  }
