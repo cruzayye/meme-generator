@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Controls({ header, footer, headerColor, footerColor, img, onChange, onSubmit, font }) {
+function Controls({ img, onChange }) {
   return (
-    <form onSubmit={onSubmit}>
-      <TextControl name="header" text={header} color={headerColor} onChange={onChange} font={font} />
-      <TextControl name="footer"  text={footer} color={footerColor} onChange={onChange} font={font}/>
+    <form >
+      {/* <TextControl name="header" text={header} color={headerColor} onChange={onChange} font={font} /> */}
       <input type='img'  name='img' value={img} onChange={onChange} placeholder='image' />
-      <input type='text' name='font' value={font} onChange={onChange} />
+      {/* <input type='text' name='font' value={font} onChange={onChange} /> */}
     
-      <button name="fonts" type='submit' >Memify</button>
+      {/* <button name="fonts" type='submit' >Memify</button> */}
     </form>
   );
 }

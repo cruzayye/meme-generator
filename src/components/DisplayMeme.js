@@ -10,8 +10,6 @@ function DisplayMeme({ memeRef, font,  header, headerColor, footerColor, img, fo
   const footerStyle = {
     color: footerColor,
     fontFamily: font
-
-
   };
 
   return (

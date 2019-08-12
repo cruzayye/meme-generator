@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { PureComponent } from 'react';
-import styles from './App.css';
 import Controls from './Controller';
 import DisplayMeme from './DisplayMeme';
+import Picture from './picture/Picture';
 import domToImage from 'dom-to-image';
 import fileSaver from 'file-saver';
 
@@ -45,7 +45,8 @@ export default class Demo extends PureComponent {
    const { header, footer, img, color, headerColor, footerColor, font } = this.state;
    return (
       <>
-        <Controls 
+        <Picture img={img} onChange={this.handleChange}/>
+        {/* <Controls 
           header={header}
           headerColor={headerColor}
           footerColor={footerColor}
@@ -55,9 +56,9 @@ export default class Demo extends PureComponent {
           onChange={this.handleChange}
           onSubmit={this.makeImg}
           font={font}
-        />
+        /> */}
 
-        <DisplayMeme
+        {/* <DisplayMeme
           memeRef={this.memeRef}
           footerColor={footerColor}
           headerColor={headerColor}
@@ -65,9 +66,7 @@ export default class Demo extends PureComponent {
           header={header}
           footer={footer}
           img={img}
-        />
-
-
+        /> */}
 
       </>
    );
