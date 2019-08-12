@@ -1,11 +1,12 @@
+
 :local(.Picture) {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: center;
 
-    .img-preview {
+    .middle {
       background-color: yellow;
     }
-
-}
+    
+ }

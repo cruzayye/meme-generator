@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { PureComponent } from 'react';
-import Controls from './Controller';
-import DisplayMeme from './DisplayMeme';
+// import Controls from './Controller';
+// import DisplayMeme from './DisplayMeme';
 import Picture from './picture/Picture';
 import domToImage from 'dom-to-image';
 import fileSaver from 'file-saver';

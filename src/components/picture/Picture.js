@@ -9,8 +9,8 @@ const Picture = ({ img, onChange }) => {
         <h1>Copy image url or upload your own image</h1>
         <input type="img" name="img" value={img} onChange={onChange} placeholder="image goes here" />
       </section>
-      <section className="img-preview">
-        <img src={img} />
+      <section className={styles.middle}>
+        <img src={img}/>
       </section>
     </article>
   );
