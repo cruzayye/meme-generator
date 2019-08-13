@@ -6,8 +6,7 @@ import Picture from './picture/Picture';
 import Text from './text/Text';
 import domToImage from 'dom-to-image';
 import fileSaver from 'file-saver';
-
-
+import Pagination from './pagination/Pagination';
 
 export default class Demo extends PureComponent {
   constructor(props) {
@@ -17,7 +16,7 @@ export default class Demo extends PureComponent {
   }
 
   state = {
-    currentFormPage: 1,
+    currentFormPage: 0,
     header: '',
     headerColor: '#000000',
     footerColor: '#000000',
@@ -36,11 +35,13 @@ export default class Demo extends PureComponent {
       });
   };
 
+  handleNextClick = () => {
+    this.setState({ currentFormPage: this.state.currentFormPage + 1 });
+  };
+
  handleChange = ({ target }) => {
    this.setState({ [target.name]: target.value });
  };
-
-
 
 
  render() {
@@ -57,8 +58,8 @@ export default class Demo extends PureComponent {
       formComponents[pages[currentFormPage]];
    return (
       <>
-        {displayedFormPage}
-
+        {displayedFormPage},
+        <Pagination handleNextClick={this.handleNextClick}/>
       </>
    );
  }

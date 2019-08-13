@@ -1,0 +1,5 @@
+:local(.Pagination) {
+  background-color: yellow;
+  position: absolute;
+  top: 15%;
+}
