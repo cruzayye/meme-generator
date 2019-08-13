@@ -31,12 +31,15 @@ export default class Demo extends PureComponent {
     domToImage.toPng(this.memeRef.current)
       .then(img => {
         fileSaver.saveAs(img);
-        // this.setState({ img });
       });
   };
 
   handleNextClick = () => {
     this.setState({ currentFormPage: this.state.currentFormPage + 1 });
+  };
+
+  handleBackClick = () => {
+    this.setState({ currentFormPage: this.state.currentFormPage - 1 });
   };
 
  handleChange = ({ target }) => {
@@ -54,12 +57,17 @@ export default class Demo extends PureComponent {
        <Text />
      )
    };
-   const displayedFormPage =
-      formComponents[pages[currentFormPage]];
+   const isBackButtonDisabled = currentFormPage <= 0;
+   const isNextButtonDisabled = currentFormPage >= 1;
+   const displayedFormPage = formComponents[pages[currentFormPage]];
    return (
       <>
         {displayedFormPage},
-        <Pagination handleNextClick={this.handleNextClick}/>
+        <Pagination 
+          handleNextClick={this.handleNextClick}
+          handleBackClick={this.handleBackClick}
+          isBackButtonDisabled={isBackButtonDisabled}
+          isNextButtonDisabled={isNextButtonDisabled}/>
       </>
    );
  }

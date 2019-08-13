@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Pagination.css';
 
-const Pagination = ({ handleNextClick, handleBackClick }) => {
+const Pagination = ({ handleNextClick, handleBackClick, isNextButtonDisabled, isBackButtonDisabled}) => {
   return (
     <article className={styles.Pagination}>
-      <button onClick={handleBackClick}>back</button>
-      <button onClick={handleNextClick}>next</button>
+      <button onClick={handleBackClick} disabled={isBackButtonDisabled}>back</button>
+      <button onClick={handleNextClick} disabled={isNextButtonDisabled}>next</button>
     </article>
   );
 };
@@ -14,6 +14,8 @@ const Pagination = ({ handleNextClick, handleBackClick }) => {
 Pagination.propTypes = {
   handleNextClick: PropTypes.func.isRequired,
   handleBackClick: PropTypes.func.isRequired,
+  isNextButtonDisabled: PropTypes.bool.isRequired,
+  isBackButtonDisabled: PropTypes.bool.isRequired
 };
 
 export default Pagination;
