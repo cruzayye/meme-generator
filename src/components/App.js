@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 // import Controls from './Controller';
 // import DisplayMeme from './DisplayMeme';
 import Picture from './picture/Picture';
+import Text from './text/Text';
 import domToImage from 'dom-to-image';
 import fileSaver from 'file-saver';
 
@@ -16,6 +17,7 @@ export default class Demo extends PureComponent {
   }
 
   state = {
+    currentFormPage: 1,
     header: '',
     headerColor: '#000000',
     footerColor: '#000000',
@@ -42,34 +44,28 @@ export default class Demo extends PureComponent {
 
 
  render() {
-   const { header, footer, img, color, headerColor, footerColor, font } = this.state;
+   const { header, footer, img, color, headerColor, footerColor, font, currentFormPage } = this.state;
+   const formComponents = {
+     picture: (
+       <Picture img={img} onChange={this.handleChange}/>
+     ),
+     textPage: (
+       <Text />
+     )
+   };
+   const displayedFormPage =
+      formComponents[pages[currentFormPage]];
    return (
       <>
-        <Picture img={img} onChange={this.handleChange}/>
-        {/* <Controls 
-          header={header}
-          headerColor={headerColor}
-          footerColor={footerColor}
-          color={color}
-          footer={footer}
-          img={img}
-          onChange={this.handleChange}
-          onSubmit={this.makeImg}
-          font={font}
-        /> */}
-
-        {/* <DisplayMeme
-          memeRef={this.memeRef}
-          footerColor={footerColor}
-          headerColor={headerColor}
-          font={font}
-          header={header}
-          footer={footer}
-          img={img}
-        /> */}
+        {displayedFormPage}
 
       </>
    );
  }
 
 }
+
+export const pages = [
+  'picture',
+  'textPage'
+];
