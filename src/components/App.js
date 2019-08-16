@@ -35,11 +35,16 @@ export default class Demo extends PureComponent {
   };
 
   handleNextClick = () => {
+    event.preventDefault();
     this.setState({ currentFormPage: this.state.currentFormPage + 1 });
   };
 
   handleBackClick = () => {
     this.setState({ currentFormPage: this.state.currentFormPage - 1 });
+  };
+
+  enterEvent = (e) => {
+    e.key === 'Enter' && this.handleNextClick();
   };
 
  handleChange = ({ target }) => {
@@ -51,7 +56,7 @@ export default class Demo extends PureComponent {
    const { header, footer, img, color, headerColor, footerColor, font, currentFormPage } = this.state;
    const formComponents = {
      picture: (
-       <Picture img={img} onChange={this.handleChange}/>
+       <Picture img={img} onChange={this.handleChange} keyDown={this.enterEvent}/>
      ),
      textPage: (
        <Text text={header} onChange={this.handleChange} img={img}/>
@@ -62,7 +67,7 @@ export default class Demo extends PureComponent {
    const displayedFormPage = formComponents[pages[currentFormPage]];
    return (
       <>
-        {displayedFormPage},
+          {displayedFormPage},
         <Pagination 
           handleNextClick={this.handleNextClick}
           handleBackClick={this.handleBackClick}
