@@ -7,11 +7,11 @@ const Text = ({ text, onChange, img }) => {
     <article className={styles.Text}>
       <section className={styles.first}>
         <h1>Enter text to go along with image</h1>
-        <input type="text" name="text" value={text} onChange={onChange} placeholder="input text" />
+        <input type="text" name="header" value={text} onChange={onChange} placeholder="input text" />
       </section>
       <section className={styles.second}>
         <img src={img}/>
-        <p>sample text</p>
+        <p>{text}</p>
       </section>
     </article>
   );
