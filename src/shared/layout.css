@@ -1,0 +1,43 @@
+
+body {
+  margin: 0;
+}
+:local(.Layout) {
+    text-align: center;
+
+    .meme {
+      margin-top: 2em;
+    }
+
+    .imgInput {
+      width: 100vw;
+      position: absolute;
+      bottom: 6em;
+
+      input {
+        border: black solid 1px;
+        padding: .7em;
+        text-align: center;
+        width: 35%;
+        background-color: black;
+        color: white;
+      }
+    }
+
+    h1{
+      background-color: black;
+      color: white;
+      font-size: 2.8rem;
+      padding: 1rem;
+      margin: 0;
+    }
+
+
+
+    .second {
+      align-self: center;
+      img {
+        max-width: 75%;
+      }
+    }
+ }

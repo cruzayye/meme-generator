@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Text.css';
+import styles from '../../shared/layout.css';
 
 const Text = ({ text, onChange, img }) => {
   return (
-    <article className={styles.Text}>
-      <section className={styles.first}>
-        <h1>Enter text to go along with image</h1>
-        <input type="text" name="header" value={text} onChange={onChange} placeholder="input text" />
-      </section>
-      <section className={styles.second}>
+    <article className={styles.Layout}>
+      <h1>Enter text to go along with image</h1>
+      <section className={styles.meme}>
         <img src={img}/>
         <p>{text}</p>
+      </section>
+      <section className={styles.imgInput}>
+        <input type="text" name="header" value={text} onChange={onChange} placeholder="input text" />
       </section>
     </article>
   );

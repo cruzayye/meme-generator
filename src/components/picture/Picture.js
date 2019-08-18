@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Picture.css';
+import styles from '../../shared/layout.css';
 
 const Picture = ({ img, onChange, keyDown }) => {
   return (
-    <article className={styles.Picture}>
+    <article className={styles.Layout}>
       <h1>Copy image address link or upload your own image</h1>
       <section className={styles.meme}>
         <img src={img}/>
