@@ -5,12 +5,12 @@ import styles from './Picture.css';
 const Picture = ({ img, onChange, keyDown }) => {
   return (
     <article className={styles.Picture}>
-      <section className={styles.first}>
-        <h1>Copy image url or upload your own image</h1>
-        <input type="img" name="img" value={img} onChange={onChange} placeholder="image goes here" onKeyDown={keyDown}/>
-      </section>
-      <section className={styles.second}>
+      <h1>Copy image address link or upload your own image</h1>
+      <section className={styles.meme}>
         <img src={img}/>
+      </section>
+      <section className={styles.imgInput}>
+        <input type="img" name="img" value={img} onChange={onChange} placeholder="image goes here" onKeyDown={keyDown}/>
       </section>
     </article>
   );

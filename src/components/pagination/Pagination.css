@@ -1,5 +1,16 @@
 :local(.Pagination) {
-  background-color: yellow;
   position: absolute;
-  top: 15%;
+  bottom: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .firstButton {
+    margin-right: 1rem;
+  }
+
+  button {
+    width: 3em;
+    border: 1px solid black;
+    font-size: 1.5em;
+  }
 }

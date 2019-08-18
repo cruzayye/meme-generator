@@ -6,6 +6,13 @@
 
   .first {
     border-right: 1px solid black;
+    h1{
+      background-color: black;
+      color: white;
+      font-size: 2.8rem;
+      padding: 1rem;
+      margin: 0;
+    }
   }
 
   .second {
