@@ -26,8 +26,7 @@ export default class Demo extends PureComponent {
     font: 'baskerville'
   };
 
-  makeImg = event => {
-    event.preventDefault();
+  makeImg = () => {
     domToImage.toPng(this.memeRef.current)
       .then(img => {
         fileSaver.saveAs(img);
