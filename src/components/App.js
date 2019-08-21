@@ -26,12 +26,14 @@ export default class Demo extends PureComponent {
     font: 'baskerville'
   };
 
-  makeImg = () => {
+  makeImg = (event) => {
+    event.preventDefault();
     domToImage.toPng(this.memeRef.current)
       .then(img => {
         fileSaver.saveAs(img);
       });
   };
+
 
   handleNextClick = () => {
     event.preventDefault();
