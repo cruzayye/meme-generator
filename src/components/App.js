@@ -60,7 +60,7 @@ export default class Demo extends PureComponent {
        <Picture img={img} onChange={this.handleChange} keyDown={this.enterEvent} />
      ),
      textPage: (
-       <Text text={header} onChange={this.handleChange} img={img} download={this.makeImg}/>
+       <Text text={header} onChange={this.handleChange} img={img} download={this.makeImg} memeRef={this.memeRef}/>
      )
    };
    const isBackButtonDisabled = currentFormPage <= 0;
