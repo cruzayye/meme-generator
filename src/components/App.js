@@ -52,7 +52,7 @@ export default class Demo extends PureComponent {
 
 
  render() {
-   const { header, footer, img, color, headerColor, footerColor, font, currentFormPage } = this.state;
+   const { header, img, currentFormPage } = this.state;
    const formComponents = {
      picture: (
        <Picture img={img} onChange={this.handleChange} keyDown={this.enterEvent} />
