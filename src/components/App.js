@@ -55,7 +55,7 @@ export default class Demo extends PureComponent {
    const { header, footer, img, color, headerColor, footerColor, font, currentFormPage } = this.state;
    const formComponents = {
      picture: (
-       <Picture img={img} onChange={this.handleChange} keyDown={this.enterEvent}/>
+       <Picture img={img} onChange={this.handleChange} keyDown={this.enterEvent} />
      ),
      textPage: (
        <Text text={header} onChange={this.handleChange} img={img} download={this.makeImg}/>
@@ -66,7 +66,7 @@ export default class Demo extends PureComponent {
    const displayedFormPage = formComponents[pages[currentFormPage]];
    return (
       <>
-          {displayedFormPage},
+          {displayedFormPage}
         <Pagination 
           handleNextClick={this.handleNextClick}
           handleBackClick={this.handleBackClick}
