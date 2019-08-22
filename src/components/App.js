@@ -21,9 +21,9 @@ export default class Demo extends PureComponent {
     headerColor: '#000000',
     footerColor: '#000000',
     footer: '',
-    img: '',
+    img: null,
     color: '#000000',
-    font: 'baskerville'
+    font: 'baskerville',
   };
 
   makeImg = (event) => {
@@ -32,6 +32,12 @@ export default class Demo extends PureComponent {
       .then(img => {
         fileSaver.saveAs(img);
       });
+  };
+
+  uploadFile = (event) => {
+    this.setState({ img: event.target.files[0], loaded: 0 });
+    // console.log(event.target.files[0].name);
+
   };
 
 
@@ -57,14 +63,14 @@ export default class Demo extends PureComponent {
    const { header, img, currentFormPage } = this.state;
    const formComponents = {
      picture: (
-       <Picture img={img} onChange={this.handleChange} keyDown={this.enterEvent} />
+       <Picture img={img} onChange={this.handleChange} keyDown={this.enterEvent} uploadFile={this.uploadFile}/>
      ),
      textPage: (
        <Text text={header} onChange={this.handleChange} img={img} download={this.makeImg} memeRef={this.memeRef}/>
      )
    };
    const isBackButtonDisabled = currentFormPage <= 0;
-   const isNextButtonDisabled = currentFormPage >= 1;
+   const isNextButtonDisabled = currentFormPage >= 1 || img === null;
    const displayedFormPage = formComponents[pages[currentFormPage]];
    return (
       <>

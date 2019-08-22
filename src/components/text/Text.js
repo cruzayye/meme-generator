@@ -6,7 +6,7 @@ const Text = ({ text, onChange, img, download, memeRef }) => {
   return (
     <form onSubmit={download}>
       <article className={styles.Layout}>
-        <h1>Enter text to go along with image</h1>
+        <h1>2: Enter text to go along with image</h1>
         <section className={styles.meme} ref={memeRef}>
           <img src={img}/>
           <p>{text}</p>
