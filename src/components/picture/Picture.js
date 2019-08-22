@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../../shared/layout.css';
 
-const Picture = ({ img, onChange, keyDown }) => {
+const Picture = ({ img, onChange, keyDown, uploadFile }) => {
   return (
     <article className={styles.Layout}>
       <h1>1: Copy image address from another source, such as Google</h1>
@@ -11,7 +11,7 @@ const Picture = ({ img, onChange, keyDown }) => {
       </section>
       <section className={styles.imgInput}>
         <input type="img" name="img" value={img} onChange={onChange} placeholder="image goes here" onKeyDown={keyDown}/>
-        {/* <input name="img" type="file" value="" onChange={uploadFile} accept="image/png, image/jpeg"/> */}
+        <input name="img" type="file" value="" onChange={uploadFile} accept="image/png, image/jpeg"/>
       </section>
     </article>
   );

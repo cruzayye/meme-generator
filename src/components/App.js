@@ -11,7 +11,6 @@ import Pagination from './pagination/Pagination';
 export default class Demo extends PureComponent {
   constructor(props) {
     super(props);
-    //creates reference to Dom node
     this.memeRef = React.createRef();
   }
 
@@ -35,11 +34,18 @@ export default class Demo extends PureComponent {
   };
 
   uploadFile = (event) => {
+    event.preventDefault();
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    reader.onloadend = () => {
+      this.setState({ img: file, img: reader.result })
+    }
     this.setState({ img: event.target.files[0], loaded: 0 });
-    // console.log(event.target.files[0].name);
-
+    reader.readAsDataURL(file)
   };
-
+  // uploadFile = (event) => {
+  //   this.setState({ img: event.target.files[0], loaded: 0 });
+  // };
 
   handleNextClick = () => {
     event.preventDefault();
