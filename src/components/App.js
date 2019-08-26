@@ -38,14 +38,10 @@ export default class Demo extends PureComponent {
     let reader = new FileReader();
     let file = event.target.files[0];
     reader.onloadend = () => {
-      this.setState({ img: file, img: reader.result })
-    }
-    this.setState({ img: event.target.files[0], loaded: 0 });
-    reader.readAsDataURL(file)
+      this.setState({ img: reader.result });
+    };
+    reader.readAsDataURL(file);
   };
-  // uploadFile = (event) => {
-  //   this.setState({ img: event.target.files[0], loaded: 0 });
-  // };
 
   handleNextClick = () => {
     event.preventDefault();

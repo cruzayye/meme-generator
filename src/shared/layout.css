@@ -7,6 +7,10 @@ body {
 
     .meme {
       margin-top: 2em;
+
+      img{
+        max-width: 20%;
+      }
     }
 
     .imgInput {
@@ -14,7 +18,7 @@ body {
       position: absolute;
       bottom: 6em;
 
-      input {
+      .styledInput {
         border: black solid 1px;
         padding: .7em;
         text-align: center;
@@ -41,12 +45,4 @@ body {
       font-weight: 600;
     }
 
-
-
-    .second {
-      align-self: center;
-      img {
-        max-width: 75%;
-      }
-    }
  }

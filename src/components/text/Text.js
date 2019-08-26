@@ -13,7 +13,7 @@ const Text = ({ text, onChange, img, download, memeRef }) => {
           <button>download</button>
         </section>
         <section className={styles.imgInput}>
-          <input type="text" name="header" value={text} onChange={onChange} placeholder="input text" />
+          <input className={styles.styledInput} type="text" name="header" value={text} onChange={onChange} placeholder="input text" />
         </section>
       </article>
     </form>
